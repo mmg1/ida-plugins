@@ -11,10 +11,10 @@ class BannedChooser(Choose2):
   '''
   def __init__(self, title, items, embedded=False):
     Choose2.__init__(self, 
-	  title, 
-	  [ ["Address", 20], ["Function Name", 40] ],
-      embedded=embedded
-  	)
+    title, 
+    [ ["Address", 20], ["Function Name", 40] ],
+    embedded=embedded
+    )
     self.title = title
     self.items = items
     self.icon = 41	# default to functions icon
@@ -22,7 +22,7 @@ class BannedChooser(Choose2):
 
   def ListFunctions(self):
     for functionAddr in Functions():
-	  print(GetFunctionName(functionAddr));
+      print(GetFunctionName(functionAddr));
     print("[+] ListFunctions() complete!");
 
   def FindBannedFunctions(self):
