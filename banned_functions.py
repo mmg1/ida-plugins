@@ -11,18 +11,18 @@ class BannedChooser(Choose2):
   '''
   def __init__(self, title, items, embedded=False):
     Choose2.__init__(self, 
-    title, 
-    [ ["Address", 20], ["Function Name", 40] ],
+	  title, 
+	  [ ["Address", 20], ["Function Name", 40] ],
       embedded=embedded
-  )
+  	)
     self.title = title
     self.items = items
-    self.icon = 41  # default to functions icon
+    self.icon = 41	# default to functions icon
     self.FindBannedFunctions()
 
   def ListFunctions(self):
     for functionAddr in Functions():
-      print(GetFunctionName(functionAddr));
+	  print(GetFunctionName(functionAddr));
     print("[+] ListFunctions() complete!");
 
   def FindBannedFunctions(self):
@@ -32,7 +32,7 @@ class BannedChooser(Choose2):
         xrefs = CodeRefsTo(functionAddr, False)
         # iterate over each cross-reference
         for xref in xrefs:
-          #print GetMnem(xref).lower()
+          print GetMnem(xref).lower()
           # is this cross-reference a function call (or jmp)
           if GetMnem(xref).lower() == "call" or GetMnem(xref).lower() == "jmp":
             print("[+] Found reference to '" + GetFunctionName(functionAddr) + "' function at address " + hex(xref))
