@@ -22,7 +22,7 @@ class BannedChooser(Choose2):
 
   def ListFunctions(self):
     for functionAddr in Functions():
-    print(GetFunctionName(functionAddr));
+      print(GetFunctionName(functionAddr));
     print("[+] ListFunctions() complete!");
 
   def FindBannedFunctions(self):
